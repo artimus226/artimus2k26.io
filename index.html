@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARTIMUS 2K26 | ARCANE</title>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Welcome Loader -->
+    <div id="welcome-loader" class="welcome-loader">
+        <div class="loader-content" style="text-align: center;">
+            <img src="logo.png" alt="Artimus 2K26 Logo" class="loader-logo">
+        </div>
+    </div>
+
+    <!-- Interactive Spider Web Background -->
+    <canvas id="spider-web" class="spider-web"></canvas>
+
+    <!-- Navigation (Neuraverse Style) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-container">
+                <img src="logo.png" alt="Artimus 2K26" class="site-logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#register" class="neon-btn small-btn">Register Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Countdown -->
+    <section id="home" class="hero">
+        <div class="hero-bg-lines"></div>
+        <div class="hero-glow"></div>
+
+        <div class="hero-content reveal">
+            <div class="hero-badge">THE CHAMPIONSHIP OF THE UNDERCITY</div>
+            <img src="logo.png" alt="Artimus 2K26" class="hero-main-logo">
+            <h1 class="hero-title glitch" data-text="ARTIMUS 2K26">ARTIMUS 2K26</h1>
+            <p class="hero-subtitle">Experience the Hextech Revolution. Battle for dominance in Zaun.</p>
+
+            <!-- Countdown Timer -->
+            <div class="countdown-container">
+                <div class="time-box">
+                    <span class="time-val" id="days">00</span>
+                    <span class="time-label">DAYS</span>
+                </div>
+                <div class="time-box">
+                    <span class="time-val" id="hours">00</span>
+                    <span class="time-label">HOURS</span>
+                </div>
+                <div class="time-box">
+                    <span class="time-val" id="minutes">00</span>
+                    <span class="time-label">MINUTES</span>
+                </div>
+                <div class="time-box">
+                    <span class="time-val" id="seconds">00</span>
+                    <span class="time-label">SECONDS</span>
+                </div>
+            </div>
+
+            <div class="hero-cta">
+                <a href="#events" class="neon-btn primary-btn">Explore Events</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section (Grid with Filters) -->
+    <section id="events" class="events-section">
+        <div class="container">
+            <h2 class="section-title text-center reveal">THE <span class="gradient-text">PROVING GROUNDS</span></h2>
+
+            <!-- Filters -->
+            <div class="filter-container reveal">
+                <button class="filter-btn active" data-filter="all">All Events</button>
+                <button class="filter-btn" data-filter="tech">Hextech Trials (Tech)</button>
+                <button class="filter-btn" data-filter="non-tech">Undercity (Non-Tech)</button>
+            </div>
+
+            <!-- Neuraverse Grid Cards -->
+            <div class="neura-grid">
+
+                <!-- Heimerdinger's Think Tank -->
+                <div class="neura-card reveal tech-event" data-category="tech" onclick="openModal('think-tank')">
+                    <div class="card-img-container">
+                        <img src="Heimerdinger.jpg" alt="Heimerdinger">
+                        <div class="card-badge tech-badge">Hextech</div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">The Academy Trials</h3>
+                        <p class="card-host">Host: Heimerdinger</p>
+                        <p class="card-desc">Solve problems using AI tools and clever prompts. Creativity determines
+                            points.</p>
+                        <div class="card-footer">
+                            <span class="view-link">View Rules ➔</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hextech Cipher Hunt -->
+                <div class="neura-card reveal tech-event" data-category="tech" onclick="openModal('cipher-hunt')"
+                    style="transition-delay: 100ms;">
+                    <div class="card-img-container">
+                        <img src="Jayce.jpg" alt="Jayce">
+                        <div class="card-badge tech-badge">Hextech</div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">The Hexgate Decryption</h3>
+                        <p class="card-host">Host: Jayce</p>
+                        <p class="card-desc">Decode clues, riddles, and ciphers to reveal hidden meanings across the
+                            campus.</p>
+                        <div class="card-footer">
+                            <span class="view-link">View Rules ➔</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Zaunite Code Breakers -->
+                <div class="neura-card reveal tech-event" data-category="tech" onclick="openModal('code-breakers')"
+                    style="transition-delay: 200ms;">
+                    <div class="card-img-container">
+                        <img src="Jinx.jpg" alt="Jinx">
+                        <div class="card-badge tech-badge">Hextech</div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">The Firelight Protocol</h3>
+                        <p class="card-host">Host: Jinx</p>
+                        <p class="card-desc">Find vulnerabilities and bugs in provided applications. Highest chaotic
+                            score wins.</p>
+                        <div class="card-footer">
+                            <span class="view-link">View Rules ➔</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hextech Innovation Forge -->
+                <div class="neura-card reveal tech-event" data-category="tech" onclick="openModal('innovation-forge')"
+                    style="transition-delay: 300ms;">
+                    <div class="card-img-container">
+                        <img src="Viktor.jpg" alt="Viktor">
+                        <div class="card-badge tech-badge">Hextech</div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">The Atlas Gauntlet Forge</h3>
+                        <p class="card-host">Host: Viktor</p>
+                        <p class="card-desc">Build a small tech solution within a short time.</p>
+                        <div class="card-footer">
+                            <span class="view-link">View Rules ➔</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Piltover Power Auction -->
+                <div class="neura-card reveal non-tech-event" data-category="non-tech"
+                    onclick="openModal('power-auction')">
+                    <div class="card-img-container">
+                        <img src="Renata.jpg" alt="Silco" style="object-position: top; transform: scale(1.5);">
+                        <div class="card-badge non-tech-badge">Undercity</div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">The Council's Bidding</h3>
+                        <p class="card-host">Host: Silco</p>
+                        <p class="card-desc">Manage your virtual budget and bid on players to build the ultimate team.
+                        </p>
+                        <div class="card-footer">
+                            <span class="view-link">View Rules ➔</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Zaun Carnival -->
+                <div class="neura-card reveal non-tech-event" data-category="non-tech"
+                    onclick="openModal('zaun-carnival')" style="transition-delay: 100ms;">
+                    <div class="card-img-container">
+                        <img src="Ekko.jpg" alt="Ekko">
+                        <div class="card-badge non-tech-badge">Undercity</div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">The Drop's Underground Gala</h3>
+                        <p class="card-host">Host: Ekko</p>
+                        <p class="card-desc">Welcome to the Fun Fiesta! Mini-games and activities straight out of the
+                            Firelights' hideout.</p>
+                        <div class="card-footer">
+                            <span class="view-link">View Rules ➔</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Arcane Battle Nexus -->
+                <div class="neura-card reveal non-tech-event" data-category="non-tech"
+                    onclick="openModal('battle-nexus')" style="transition-delay: 200ms;">
+                    <div class="card-img-container">
+                        <img src="Vi.jpg" alt="Vi">
+                        <div class="card-badge non-tech-badge">Undercity</div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">The Last Drop Brawl</h3>
+                        <p class="card-host">Host: Vi</p>
+                        <p class="card-desc">Step into the ring. Prove your mechanical prowess in standard Esports
+                            tournament brackets.</p>
+                        <div class="card-footer">
+                            <span class="view-link">View Rules ➔</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Council of Piltover Gala -->
+                <div class="neura-card reveal non-tech-event" data-category="non-tech"
+                    onclick="openModal('piltover-gala')" style="transition-delay: 300ms;">
+                    <div class="card-img-container">
+                        <img src="Caitlyn.jpg" alt="Caitlyn">
+                        <div class="card-badge non-tech-badge">Piltover</div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">The Progress Day Summit</h3>
+                        <p class="card-host">Host: Caitlyn</p>
+                        <p class="card-desc">A formal Gowned Party where the elite of topside gather. Dress to impress.
+                        </p>
+                        <div class="card-footer">
+                            <span class="view-link">View Rules ➔</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container reveal">
+            <h2 class="section-title text-center">CONTACT <span class="gradient-text">US</span></h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>Location</h3>
+                    <p class="monospace-text">Kings Engineering College</p>
+                    <p>Opposite Hyundai Motors, Chennai-Bangalore Highway,<br>
+                        Irungattukottai, Sriperumbudur,<br>
+                        Chennai, Tamil Nadu 602117</p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">🎟️</div>
+                    <h3>Registration Fee</h3>
+                    <div class="fee-amount gradient-text">₹100</div>
+                    <p>Per Participant</p>
+                    <a href="#register" class="neon-btn small-btn mt-4">Register Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>ARTIMUS <span class="gradient-text">2K26</span></h2>
+                <p>The Glorious Evolution meets Zaunite Chaos.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#events">Events</a>
+                <a href="#contact">Contact</a>
+                <a href="#register">Register</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Artimus 2K26 Symposium. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modals Container -->
+    <div id="modal-container" class="modal-container">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+            <div class="modal-body">
+                <div class="modal-image-col">
+                    <img id="modal-char-img" src="" alt="Character">
+                    <div class="modal-overlay-glow"></div>
+                </div>
+                <div class="modal-text-col">
+                    <h2 id="modal-title" class="modal-title">Event Title</h2>
+                    <h4 id="modal-host" class="modal-host gradient-text">Host: Name</h4>
+                    <div class="modal-rules monospace-text" id="modal-rules">
+                        <!-- Rules injected via JS -->
+                    </div>
+                    <button class="neon-btn primary-btn w-100 mt-4">Register For Event</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>
